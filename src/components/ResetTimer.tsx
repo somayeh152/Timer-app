@@ -1,13 +1,9 @@
-import { useCallback } from "react";
+import { memo } from "react";
 
-const StartTimer = ({onReset}) => {
-    const handleClick = useCallback(() => {
-        onReset();
-    }, []);
-
+const ResetTimer = ({onReset}) => {
     return (
-        <button onClick={handleClick}>Reset</button>
+        <button onClick={onReset}>Reset</button>
     )
 }
 
-export default StartTimer;
+export default memo(ResetTimer);
